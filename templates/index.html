@@ -1,5 +1,5 @@
 {% from 'components.html' import card with context %}
-<link rel="stylesheet" href="./static/styles.css">
+<link rel="stylesheet" href="/static/styles.css">
 
 {% if not session['user'] %}
 <div class="login-title">Email Sender</div>
@@ -15,10 +15,10 @@
 <div class="wrapper">
     <div class="header">
         <div>
-            {{ card(emoji='', data=emails_sent, title='Total Emails:')}}
-            {{ card(emoji='', data=session['user'], title='Username')}}
-            {{ card(emoji='', data=user['logins'], title='No. of Logins')}}
-            {{ card(emoji='', data=user['emails_sent'], title='Emails You Sent')}}
+            {{ card(emoji='📤', data=emails_sent, title='Total Emails:')}}
+            {{ card(emoji='👤', data=session['user'], title='Username')}}
+            {{ card(emoji='',🔐 data=user['logins'], title='No. of Logins')}}
+            {{ card(emoji='📥', data=user['emails_sent'], title='Emails You Sent')}}
         </div>
             <div id="email_icon">
                 <img src="{{ email_image }}" width="200" height="200" style="border-radius: 10%" alt="email icon">
