@@ -1,0 +1,61 @@
+{% from 'components.html' import card with context %}
+<link rel="stylesheet" href="./static/styles.css">
+
+{% if not session['user'] %}
+<div class="login-title">Email Sender</div>
+<form action="/" method="post">
+    <div class="login-form">
+        <input type="text" name="user_name" placeholder="Username">
+        <button type="submit">Login/Signup</button>
+    </div>
+</form>
+{% endif %}
+
+{% if session['user'] %}
+<div class="wrapper">
+    <div class="header">
+        <div>
+            {{ card(emoji='', data=emails_sent, title='Total Emails:')}}
+            {{ card(emoji='', data=session['user'], title='Username')}}
+            {{ card(emoji='', data=user['logins'], title='No. of Logins')}}
+            {{ card(emoji='', data=user['emails_sent'], title='Emails You Sent')}}
+        </div>
+            <div id="email_icon">
+                <img src="{{ email_image }}" width="200" height="200" style="border-radius: 10%" alt="email icon">
+            </div>
+    </div>
+
+    <div class="buttonsContainer">
+        <form action="/send_email" method="post">
+            <button>Send Email</button>
+        </form>
+
+        <form action="/logout">
+            <button>Logout</button>
+        </form>
+    </div>
+
+    <table class="leaderboard">
+        <th>
+            <div class="titles">
+                <tr>
+                    <td>Ranking</td>
+                    <td>Name</td>
+                    <td>Emails Sent</td>
+                    <td>Logins</td>
+                </tr>
+            </div>
+        </th>
+
+    {% for index, user in users %}
+        <tr>
+            <td>{{ index | trophy_or_position }}</td>
+            <td>{{ user['user_name'] }}</td>
+            <td>{{ user['emails_sent'] }}</td>
+            <td>{{ user['logins'] }}</td>
+        </tr>
+    {% endfor %}
+
+    </table>
+</div>
+{% endif %}
