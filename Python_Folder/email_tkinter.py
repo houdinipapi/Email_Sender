@@ -42,4 +42,18 @@ subject_label.grid(row=5, sticky=W, padx=5)
 body_label = Label(master, text="Body", font=('Calibri', 11))
 body_label.grid(row=6, sticky=W, padx=5)
 
+# --- Notification --- #
+notif_label = Label(master, text="", font=('Calibri', 11))
+notif_label.grid(row=7, sticky=S, padx=5)
+
+# Storage
+
+# --- Temporary Storage --- #
+temp_username = StringVar()
+temp_paswd = StringVar()
+temp_recipient = StringVar()
+temp_subject = StringVar()
+temp_body = StringVar()
+
+
 master.mainloop()
