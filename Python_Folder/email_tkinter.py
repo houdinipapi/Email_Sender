@@ -19,7 +19,7 @@ instruct_label.grid(row=1, sticky=W, padx=5)
 
 # --- Email Sender --- #
 
-sender_label = Label(master, text="Sender", font=('Calibri', 11))
+sender_label = Label(master, text="From", font=('Calibri', 11))
 sender_label.grid(row=2, sticky=W, padx=5)
 
 # --- Email Password --- #
@@ -29,8 +29,8 @@ paswd_label.grid(row=3, sticky=W, padx=5)
 
 # --- Email Recipient --- #
 
-top_label = Label(master, text="Custom Python Email app", font=('Calibri', 15))
-top_label.grid(row=0, sticky=N)
+recipient_label = Label(master, text="To", font=('Calibri', 11))
+recipient_label.grid(row=4, sticky=W, padx=5)
 
 # --- Email Subject --- #
 
