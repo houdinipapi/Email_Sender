@@ -39,7 +39,7 @@ subject_label.grid(row=5, sticky=W, padx=5)
 
 # --- Email Body --- #
 
-top_label = Label(master, text="Custom Python Email app", font=('Calibri', 15))
-top_label.grid(row=0, sticky=N)
+body_label = Label(master, text="Body", font=('Calibri', 11))
+body_label.grid(row=6, sticky=W, padx=5)
 
 master.mainloop()
