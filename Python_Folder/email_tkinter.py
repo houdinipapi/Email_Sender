@@ -65,4 +65,10 @@ usernameEntry.grid(row=2, column=0)
 paswdEntry = Entry(master, textvariable=temp_paswd)
 paswdEntry.grid(row=3, column=0)
 
+# --- Recipient Entry --- #
+recipientEntry = Entry(master, textvariable=temp_recipient)
+recipientEntry.grid(row=4, column=0)
+
+# --- Subject Entry
+
 master.mainloop()
