@@ -24,6 +24,18 @@ def send():
             notif_label.config(text="Subject Required!", fg="red")
         elif body == "":
             notif_label.config(text="Body Required!", fg="red")
+            return
+        else:
+            final_message = "Subject: {}\n\n{}".format(subject, body)
+            server = smtplib.SMTP('smtp.gmail.com')
+            server.starttls()
+            server.login(username, paswd)
+            server.sendmail(username, recipient, final_message)
+            notif_label.config(text='Email Sent Successfully!', fg='green')
+
+    except:
+        notif_label.config(text='Error Sending Email!', fg='red')
+
 
 
 # --- Defining the reset() function --- #
