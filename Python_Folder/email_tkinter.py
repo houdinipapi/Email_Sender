@@ -1,6 +1,16 @@
 from tkinter import *
 import smtplib
 
+
+# DEFINING FUNCTIONS
+def send():
+    return True
+
+
+def reset():
+    return False
+
+
 # Main Screen Initialization
 master = Tk()
 master.title('Email App')
