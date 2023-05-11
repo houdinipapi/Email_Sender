@@ -13,7 +13,17 @@ def send():
     subject = temp_subject.get()
     body = temp_body.get()
 
-
+    try:
+        if username == "":
+            notif_label.config(text="User's Email Required!", fg="red")
+        elif paswd == "":
+            notif_label.config(text="Password Required!", fg="red")
+        elif recipient == "":
+            notif_label.config(text="Receiver's Email Required!", fg="red")
+        elif subject == "":
+            notif_label.config(text="Subject Required!", fg="red")
+        elif body == "":
+            notif_label.config(text="Body Required!", fg="red")
 
 
 # --- Defining the reset() function --- #
