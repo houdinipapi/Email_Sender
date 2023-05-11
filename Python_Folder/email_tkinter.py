@@ -55,8 +55,14 @@ temp_recipient = StringVar()
 temp_subject = StringVar()
 temp_body = StringVar()
 
-# --- Entries --- #
+# Entries
+
+# --- Username Entry --- #
 usernameEntry = Entry(master, textvariable=temp_username)
 usernameEntry.grid(row=2, column=0)
+
+# --- Password Entry --- #
+paswdEntry = Entry(master, textvariable=temp_paswd)
+paswdEntry.grid(row=3, column=0)
 
 master.mainloop()
