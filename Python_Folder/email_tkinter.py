@@ -8,7 +8,11 @@ def send():
 
 
 def reset():
-    return False
+    usernameEntry.delete(0, 'end')
+    paswdEntry.delete(0, 'end')
+    recipientEntry.delete(0, 'end')
+    subjectEntry.delete(0, 'end')
+    bodyEntry.delete(0, 'end')
 
 
 # Main Screen Initialization
