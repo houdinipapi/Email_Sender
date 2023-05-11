@@ -1,9 +1,12 @@
 from tkinter import *
 import smtplib
 
+# Main Screen Initialization
+master = Tk()
+master.title('Email App')
+
 
 # DEFINING FUNCTIONS
-
 # --- Defining the send() function --- #
 def send():
     # --- Getting input values --- #
@@ -27,7 +30,7 @@ def send():
             return
         else:
             final_message = "Subject: {}\n\n{}".format(subject, body)
-            server = smtplib.SMTP('smtp.gmail.com')
+            server = smtplib.SMTP('smtp.gmail.com', 587)
             server.starttls()
             server.login(username, paswd)
             server.sendmail(username, recipient, final_message)
@@ -46,12 +49,7 @@ def reset():
     bodyEntry.delete(0, 'end')
 
 
-# Main Screen Initialization
-master = Tk()
-master.title('Email App')
-
 # GRAPHICS
-
 # --- Oth Row --- #
 # Label(master, text="Custom Email App", font=('Calibri', 15)).grid(row=0, sticky=N)
 top_label = Label(master, text="Custom Python Email app", font=('Calibri', 15))
@@ -61,29 +59,23 @@ instruct_label = Label(master, text="Fill in the form below to send an email", f
 instruct_label.grid(row=1, sticky=W, padx=5)
 
 # INPUT FIELDS
-
 # --- Email Sender --- #
-
 sender_label = Label(master, text="From", font=('Calibri', 11))
 sender_label.grid(row=2, sticky=W, padx=5)
 
 # --- Email Password --- #
-
 paswd_label = Label(master, text="Password", font=('Calibri', 11))
 paswd_label.grid(row=3, sticky=W, padx=5)
 
 # --- Email Recipient --- #
-
 recipient_label = Label(master, text="To", font=('Calibri', 11))
 recipient_label.grid(row=4, sticky=W, padx=5)
 
 # --- Email Subject --- #
-
 subject_label = Label(master, text="Subject", font=('Calibri', 11))
 subject_label.grid(row=5, sticky=W, padx=5)
 
 # --- Email Body --- #
-
 body_label = Label(master, text="Body", font=('Calibri', 11))
 body_label.grid(row=6, sticky=W, padx=5)
 
@@ -92,7 +84,6 @@ notif_label = Label(master, text="", font=('Calibri', 11))
 notif_label.grid(row=7, sticky=S, padx=5)
 
 # STORAGE
-
 # --- Temporary Storage --- #
 temp_username = StringVar()
 temp_paswd = StringVar()
@@ -101,7 +92,6 @@ temp_subject = StringVar()
 temp_body = StringVar()
 
 # ENTRIES
-
 # --- Username Entry --- #
 usernameEntry = Entry(master, textvariable=temp_username)
 usernameEntry.grid(row=2, column=0)
@@ -124,7 +114,6 @@ bodyEntry.grid(row=6, column=0)
 
 
 # BUTTONS
-
 # --- Send Button --- #
 send_button = Button(master, text='Send', command=send)
 send_button.grid(row=7, sticky=W, pady=15, padx=5)
