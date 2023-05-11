@@ -3,10 +3,20 @@ import smtplib
 
 
 # DEFINING FUNCTIONS
+
+# --- Defining the send() function --- #
 def send():
-    return True
+    # --- Getting input values --- #
+    username = temp_username.get()
+    paswd = temp_paswd.get()
+    recipient = temp_recipient.get()
+    subject = temp_subject.get()
+    body = temp_body.get()
 
 
+
+
+# --- Defining the reset() function --- #
 def reset():
     usernameEntry.delete(0, 'end')
     paswdEntry.delete(0, 'end')
