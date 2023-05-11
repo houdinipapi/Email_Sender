@@ -1,5 +1,8 @@
 from tkinter import *
 import smtplib
+import ssl
+from email.message import EmailMessage
+# from app_code import pass_code
 
 # Main Screen Initialization
 master = Tk()
@@ -27,12 +30,27 @@ def send():
             notif_label.config(text="Subject Required!", fg="red")
         elif body == "":
             notif_label.config(text="Body Required!", fg="red")
+        # else:
+        #     final_message = "Subject: {}\n\n{}".format(subject, body)
+        #     server = smtplib.SMTP('smtp.gmail.com', 587)
+        #     server.starttls()
+        #     server.login(username, paswd)
+        #     server.sendmail(username, recipient, final_message)
+        #     notif_label.config(text='Email Sent Successfully!', fg='green')
+
         else:
-            final_message = "Subject: {}\n\n{}".format(subject, body)
-            server = smtplib.SMTP('smtp.gmail.com', 587)
-            server.starttls()
-            server.login(username, paswd)
-            server.sendmail(username, recipient, final_message)
+            em = EmailMessage()
+            em['From'] = username
+            em['To'] = recipient
+            em['subject'] = subject
+            em.set_content(body)
+
+            context = ssl.create_default_context()
+
+            with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
+                smtp.login(username, paswd)
+                smtp.sendmail(username, recipient, em.as_string())
+
             notif_label.config(text='Email Sent Successfully!', fg='green')
 
     except:
