@@ -94,4 +94,8 @@ bodyEntry.grid(row=6, column=0)
 send_button = Button(master, text='Send', command=send)
 send_button.grid(row=7, sticky=W, pady=15, padx=5)
 
+# --- Reset Button --- #
+reset_button = Button(master, text='Reset', command=reset)
+reset_button.grid(row=7, pady=45, padx=45)
+
 master.mainloop()
