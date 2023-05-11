@@ -37,7 +37,6 @@ def send():
         notif_label.config(text='Error Sending Email!', fg='red')
 
 
-
 # --- Defining the reset() function --- #
 def reset():
     usernameEntry.delete(0, 'end')
