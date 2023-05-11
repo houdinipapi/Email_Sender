@@ -63,7 +63,7 @@ usernameEntry.grid(row=2, column=0)
 
 # --- Password Entry --- #
 paswdEntry = Entry(master, textvariable=temp_paswd)
-paswdEntry.grid(row=3, column=0)
+paswdEntry.grid(row=3, column=0, padx=75)
 
 # --- Recipient Entry --- #
 recipientEntry = Entry(master, textvariable=temp_recipient)
