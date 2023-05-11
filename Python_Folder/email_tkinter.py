@@ -73,4 +73,8 @@ recipientEntry.grid(row=4, column=0)
 subjectEntry = Entry(master, textvariable=temp_subject)
 subjectEntry.grid(row=5, column=0)
 
+# --- Body Entry --- #
+bodyEntry = Entry(master, textvariable=temp_body)
+bodyEntry.grid(row=6, column=0)
+
 master.mainloop()
