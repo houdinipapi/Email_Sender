@@ -55,5 +55,8 @@ temp_recipient = StringVar()
 temp_subject = StringVar()
 temp_body = StringVar()
 
+# --- Entries --- #
+usernameEntry = Entry(master, textvariable=temp_username)
+usernameEntry.grid(row=2, column=0)
 
 master.mainloop()
