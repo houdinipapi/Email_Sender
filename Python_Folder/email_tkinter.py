@@ -1,11 +1,11 @@
 from tkinter import *
 import smtplib
 
-# Main Screen
+# Main Screen Initialization
 master = Tk()
 master.title('Email App')
 
-# Graphics
+# GRAPHICS
 
 # --- Oth Row --- #
 # Label(master, text="Custom Email App", font=('Calibri', 15)).grid(row=0, sticky=N)
@@ -15,7 +15,7 @@ top_label.grid(row=0, sticky=N)
 instruct_label = Label(master, text="Fill in the form below to send an email", font=('Calibri', 11))
 instruct_label.grid(row=1, sticky=W, padx=5)
 
-# Input Fields
+# INPUT FIELDS
 
 # --- Email Sender --- #
 
@@ -46,7 +46,7 @@ body_label.grid(row=6, sticky=W, padx=5)
 notif_label = Label(master, text="", font=('Calibri', 11))
 notif_label.grid(row=7, sticky=S, padx=5)
 
-# Storage
+# STORAGE
 
 # --- Temporary Storage --- #
 temp_username = StringVar()
@@ -55,7 +55,7 @@ temp_recipient = StringVar()
 temp_subject = StringVar()
 temp_body = StringVar()
 
-# Entries
+# ENTRIES
 
 # --- Username Entry --- #
 usernameEntry = Entry(master, textvariable=temp_username)
@@ -76,5 +76,12 @@ subjectEntry.grid(row=5, column=0)
 # --- Body Entry --- #
 bodyEntry = Entry(master, textvariable=temp_body)
 bodyEntry.grid(row=6, column=0)
+
+
+# BUTTONS
+
+# --- Send Button --- #
+send_button = Button(master, text='Send', command=send)
+send_button.grid(row=7, sticky=W, pady=15, padx=5)
 
 master.mainloop()
