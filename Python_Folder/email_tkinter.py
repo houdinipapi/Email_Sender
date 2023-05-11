@@ -24,7 +24,6 @@ def send():
             notif_label.config(text="Subject Required!", fg="red")
         elif body == "":
             notif_label.config(text="Body Required!", fg="red")
-            return
         else:
             final_message = "Subject: {}\n\n{}".format(subject, body)
             server = smtplib.SMTP('smtp.gmail.com')
