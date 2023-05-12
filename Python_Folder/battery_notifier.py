@@ -51,7 +51,7 @@ if __name__ == "__main__":
         elif percent <= 50:
             notification.notify(
                 title="Battery Reminder",
-                message=f"Battery is {percent} %.",
+                message=f"Battery is {percent}%.",
                 timeout=5
             )
 
@@ -59,5 +59,12 @@ if __name__ == "__main__":
             notification.notify(
                 title="Battery Reminder",
                 message="Fully Charged.",
+                timeout=5
+            )
+
+        else:
+            notification.notify(
+                title="Battery Reminder",
+                message=f"Battery is {percent}%.",
                 timeout=5
             )
