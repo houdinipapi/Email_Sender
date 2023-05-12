@@ -19,5 +19,6 @@ if __name__ == "__main__":
                 # Notification Message
                 message="For better battery life, charge up-to 80%",
 
-
+                # Displaying Time
+                timeout=5
             )
