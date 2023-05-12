@@ -14,4 +14,10 @@ if __name__ == "__main__":
         if percent <= 80:
             notification.notify(
                 # Notification Title
+                title="Plugged In",
+
+                # Notification Message
+                message="For better battery life, charge up-to 80%",
+
+
             )
