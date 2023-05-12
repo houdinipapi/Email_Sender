@@ -22,3 +22,10 @@ if __name__ == "__main__":
                 # Displaying Time
                 timeout=5
             )
+
+        elif percent == 100:
+            notification.notify(
+                title="Plugged In",
+                message="Battery is fully charged. Please plug out the charger.",
+                timeout=5
+            )
